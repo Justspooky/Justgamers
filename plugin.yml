@@ -1,0 +1,34 @@
+name: Justgamers
+version: 0.2 alpha
+main: nl.justspooky.justgamers.Startup
+author: justspooky
+description: The Servercore for the justgamers server.
+depend: [TagAPI]
+commands:
+  regels:
+    description: Read the rules in dutch
+  twitter:
+    description: Check our twitter accounts
+  facebook:
+    description: Check our facebook page
+  website:
+    description: Check our website
+    aliases: [web]
+  mywarns:
+    description: Check your own warnings
+    aliases: [mw]
+  warn:
+    description: Warn a player
+    aliases: [w]
+  warnings:
+    description: Check a player his warnings
+  setmotd:
+    description: set the server motd
+  tag:
+    description: Reset Player Tag
+  setshop:
+    description: Set The shop location
+  shop:
+    description: Teleport to the shop
+  staff:
+    description: Staff Command
