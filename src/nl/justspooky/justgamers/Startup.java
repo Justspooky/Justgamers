@@ -70,6 +70,7 @@ public class Startup extends JavaPlugin {
 				manager.registerEvents(new BanMSG(), this);
 				manager.registerEvents(new Motd(), this);
 				manager.registerEvents(new PlayerTag(), this);
+				manager.registerEvents(new Title(), this);
 				// JoinPrefix
 				manager.registerEvents(new JoinPREFIX(), this);
 				manager.registerEvents(new QuitMSG(), this);
@@ -140,7 +141,7 @@ if (cmd.getName().equalsIgnoreCase("tag")){
 		}
 		if (args.length == 0) {
 			String motd = settings.getConfig().getString("motd");
-			motd = motd.replaceAll("&", "§");
+			motd = motd.replaceAll("&", "ï¿½");
 			sender.sendMessage(prefix + ChatColor.GREEN + "The motd now is: " + motd);
 			sender.sendMessage(prefix + ChatColor.BLUE + "Please specify a message!");
 			return true;
@@ -153,7 +154,7 @@ if (cmd.getName().equalsIgnoreCase("tag")){
 		settings.getConfig().set("motd", motd);
 		settings.saveConfig();
 		String server = settings.getConfig().getString("motd");
-		server = server.replaceAll("&", "§");
+		server = server.replaceAll("&", "ï¿½");
 		sender.sendMessage(ChatColor.GREEN + "MOTD set to: " + server);
 		return true;
 	}
