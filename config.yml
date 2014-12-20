@@ -6,3 +6,7 @@ ownercolor: "&6"
 website: http://www.test.nl
 twitter: example
 facebook: https://www.facebook.com/example
+title:
+  head: "&6Example"
+  subtitle: "&5Made By Justspooky"
+  time: 200

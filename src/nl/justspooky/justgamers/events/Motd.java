@@ -12,7 +12,7 @@ public class Motd implements Listener {
 	@EventHandler
 	public void onserverping(ServerListPingEvent e){
 		String motd = settings.getConfig().getString("motd");
-		motd = motd.replaceAll("&", "ง");
+		motd = motd.replaceAll("&", "ยง");
 		e.setMotd(motd);
 		settings.saveConfig();
 	}

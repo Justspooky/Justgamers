@@ -8,10 +8,22 @@ import com.connorlinfoot.titleapi.TitleAPI;
 
 public class Title implements Listener {
 
+	SettingsManager settings = SettingsManager.getInstance();
+	
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onplayerjoin(PlayerJoinEvent e){
-		TitleAPI.sendFullTitle(e.getPlayer(), 20, 400, 20, "Welkom op de Justgamers server", "Veel plezier");
+		
+	String head = settings.getConfig().getString("title.head");
+	head = head.replaceAll("&", "§");
+	
+	String subtitle = settings.getConfig().getString("title.subsitle");
+	subtitle = subtitle.replaceAll("&", "§");
+	
+	int time = settings.getConfig().getInt("title.time");
+		
+		
+		TitleAPI.sendFullTitle(e.getPlayer(), 20, time, 20, head, subtitle);
 	}
 	
 }

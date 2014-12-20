@@ -20,20 +20,20 @@ public class PlayerTag implements Listener {
              if (!p.isOp()){
              if (p.hasPermission("justgamers.member")){
             	 String membercolor = settings.getConfig().getString("membercolor");
-             	membercolor = membercolor.replaceAll("&", "ง");
+             	membercolor = membercolor.replaceAll("&", "ยง");
              	e.setTag(membercolor + p.getName());
              }
              if(p.hasPermission("justgamers.staff")){
             	 
             	String staffcolor = settings.getConfig().getString("staffcolor");
-            	staffcolor = staffcolor.replaceAll("&", "ง");
+            	staffcolor = staffcolor.replaceAll("&", "ยง");
             	 e.setTag(staffcolor + p.getName());
             	 
              }}
              if(p.hasPermission("justgamers.owner")){
             	 
               	String ownercolor = settings.getConfig().getString("ownercolor");
-              	ownercolor = ownercolor.replaceAll("&", "ง");
+              	ownercolor = ownercolor.replaceAll("&", "ยง");
               	 e.setTag(ownercolor + p.getName());
               	 
                }
