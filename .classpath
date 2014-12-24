@@ -5,5 +5,7 @@
 	<classpathentry kind="lib" path="/Users/ZL108985/Desktop/spigot/server2/Plugins/TagAPI.jar"/>
 	<classpathentry kind="lib" path="/Users/ZL108985/Desktop/spigot/server2/craftbukkit.jar"/>
 	<classpathentry kind="lib" path="/Users/ZL108985/Desktop/spigot/server2/Plugins/TitleAPI.jar"/>
+	<classpathentry kind="lib" path="/Users/ZL108985/Desktop/spigot.jar"/>
+	<classpathentry kind="lib" path="/Users/ZL108985/Desktop/BarAPI.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

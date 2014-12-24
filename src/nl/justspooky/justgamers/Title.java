@@ -1,5 +1,6 @@
 package nl.justspooky.justgamers;
 
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -12,18 +13,10 @@ public class Title implements Listener {
 	
 	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void onplayerjoin(PlayerJoinEvent e){
-		
-	String head = settings.getConfig().getString("title.head");
-	head = head.replaceAll("&", "§");
-	
-	String subtitle = settings.getConfig().getString("title.subsitle");
-	subtitle = subtitle.replaceAll("&", "§");
-	
-	int time = settings.getConfig().getInt("title.time");
-		
-		
-		TitleAPI.sendFullTitle(e.getPlayer(), 20, time, 20, head, subtitle);
+			public void onplayerjoin(PlayerJoinEvent e){		
+				TitleAPI.sendFullTitle(e.getPlayer(), 20, 400, 20, ChatColor.GREEN + "Justgamers " + ChatColor.AQUA + "Server", ChatColor.RED + "Website: " + ChatColor.YELLOW + settings.getConfig().getString("website"));
+				TitleAPI.sendTabTitle(e.getPlayer(), ChatColor.GOLD + "Justgamers Server", ChatColor.RED + "http://www.justgamers.nl");
+				
 	}
 	
 }

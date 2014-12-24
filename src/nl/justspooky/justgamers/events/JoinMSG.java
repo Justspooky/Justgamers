@@ -25,7 +25,7 @@ public class JoinMSG implements Listener {
 		int l = Integer.parseInt(level.toString());
 		
 		String news = settings.getConfig().getString("news");
-		news = news.replaceAll("&", "ง");
+		news = news.replaceAll("&", "ยง");
 		
 		target.sendMessage(ChatColor.DARK_BLUE + "------------------" + ChatColor.GOLD + "JustGamers Server"+ ChatColor.DARK_BLUE + "------------------");
 		target.sendMessage(ChatColor.YELLOW + "Have Fun on the server");

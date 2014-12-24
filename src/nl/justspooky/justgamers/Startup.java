@@ -13,7 +13,7 @@ import nl.justspooky.justgamers.events.BanMSG;
 import nl.justspooky.justgamers.events.Chatmessage;
 import nl.justspooky.justgamers.events.JoinMSG;
 import nl.justspooky.justgamers.events.JoinPREFIX;
-import nl.justspooky.justgamers.events.Motd;
+//import nl.justspooky.justgamers.events.Motd;
 import nl.justspooky.justgamers.events.PlayerTag;
 import nl.justspooky.justgamers.events.QuitMSG;
 
@@ -68,7 +68,7 @@ public class Startup extends JavaPlugin {
 				manager.registerEvents(new Chatmessage(), this);
 				manager.registerEvents(new JoinMSG(), this);
 				manager.registerEvents(new BanMSG(), this);
-				manager.registerEvents(new Motd(), this);
+				//manager.registerEvents(new Motd(), this);
 				manager.registerEvents(new PlayerTag(), this);
 				manager.registerEvents(new Title(), this);
 				// JoinPrefix
@@ -173,6 +173,10 @@ if (cmd.getName().equalsIgnoreCase("tag")){
 	}
 	if (cmd.getName().equalsIgnoreCase("regels")){
 		Commandregister.regels(sender);
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("donate")){
+		Commandregister.donate(sender);
 		return true;
 	}
 	

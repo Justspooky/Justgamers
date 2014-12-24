@@ -7,6 +7,8 @@ import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import com.connorlinfoot.titleapi.TitleAPI;
+
 public class Commandregister {
 	
 	static SettingsManager settings = SettingsManager.getInstance();
@@ -66,6 +68,7 @@ public class Commandregister {
 		sender.sendMessage(ChatColor.WHITE + "10. " + ChatColor.GREEN + "AFK machines zijn niet toegestaan");
 		sender.sendMessage(ChatColor.GOLD + "-----------------------------------------------------");
 	}
+	@SuppressWarnings("deprecation")
 	public static void shopttp (CommandSender sender){
 		 Player p = (Player) sender;
          World w = Bukkit.getServer().getWorld(settings.getConfig().getString("shop.world"));
@@ -74,6 +77,7 @@ public class Commandregister {
          double z = settings.getConfig().getDouble("shop.z");
          p.teleport(new Location(w, x, y, z));
          p.sendMessage(prefix + ChatColor.RED + "Welcome in the shop!");
+         TitleAPI.sendTitle(p, 20, 100, 20, ChatColor.AQUA + "Welcome in the shop");
 	}
 	public static void setshop (CommandSender sender){
 		Player p = (Player) sender;
@@ -83,6 +87,13 @@ public class Commandregister {
         settings.getConfig().set("shop.z", p.getLocation().getZ());
         settings.saveConfig();
         p.sendMessage(prefix + ChatColor.LIGHT_PURPLE + "Shop Location set");
+	}
+	@SuppressWarnings("deprecation")
+	public static void donate (CommandSender sender){
+		Player p = (Player) sender;
+		sender.sendMessage(prefix + "Donate on our website to help the server to pay the bills");
+		sender.sendMessage(prefix + "http://www.justgamers.nl/donate");
+		TitleAPI.sendFullTitle(p, 20, 100, 20, ChatColor.RED + "Donate at our website", ChatColor.YELLOW + "http://www.justgamers.nl/donate");
 	}
 }
 	

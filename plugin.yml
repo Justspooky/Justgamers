@@ -22,8 +22,6 @@ commands:
     aliases: [w]
   warnings:
     description: Check a player his warnings
-  setmotd:
-    description: set the server motd
   tag:
     description: Reset Player Tag
   setshop:
@@ -32,3 +30,5 @@ commands:
     description: Teleport to the shop
   staff:
     description: Staff Command
+  donate:
+    description: Information about donating
