@@ -46,8 +46,12 @@ public class Startup extends JavaPlugin {
 		if (Bukkit.getServer().getPluginManager().getPlugin("TagAPI") == null){
 			l.warning("TagAPI is not in the server the plugin wil not work without TagAPI");
 		}
-		
+		l.info("-----------------------------------------------------");
 		l.info("De Justgamers server is opgestart.");
+		l.info("Developer: Kevin Wilmsen http://www.kevinwilmsen.nl");
+		l.info("Version: " + getDescription().getVersion());
+		l.info("Authors: " + getDescription().getAuthors());
+		l.info("-----------------------------------------------------");
 		PluginManager manager = this.getServer().getPluginManager();
 		
 		
@@ -79,24 +83,19 @@ public class Startup extends JavaPlugin {
 	
 	// ** Fix the warning messages and create a join message
 
-	
-
-	
-	
 	@Override
 	public void onDisable(){
-	
+		l.info("-----------------------------------------------------");
+		l.info("De Justgamers server is Afgesloten.");
+		l.info("Developer: Kevin Wilmsen http://www.kevinwilmsen.nl");
+		l.info("Version: " + getDescription().getVersion());
+		l.info("Authors: " + getDescription().getAuthors());
+		l.info("-----------------------------------------------------");
 	}
-	
-	//todo
-	//Fix warn tempban bugg
-	
-	
 	
 	BanList bukkitBanList = Bukkit.getBanList(BanList.Type.NAME);
 	BanList serverBanList = getServer().getBanList(BanList.Type.NAME);
 
-//@SuppressWarnings("deprecation")
 
 @SuppressWarnings("deprecation")
 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
@@ -141,7 +140,7 @@ if (cmd.getName().equalsIgnoreCase("tag")){
 		}
 		if (args.length == 0) {
 			String motd = settings.getConfig().getString("motd");
-			motd = motd.replaceAll("&", "�");
+			motd = motd.replaceAll("&", "§");
 			sender.sendMessage(prefix + ChatColor.GREEN + "The motd now is: " + motd);
 			sender.sendMessage(prefix + ChatColor.BLUE + "Please specify a message!");
 			return true;
@@ -154,7 +153,7 @@ if (cmd.getName().equalsIgnoreCase("tag")){
 		settings.getConfig().set("motd", motd);
 		settings.saveConfig();
 		String server = settings.getConfig().getString("motd");
-		server = server.replaceAll("&", "�");
+		server = server.replaceAll("&", "§");
 		sender.sendMessage(ChatColor.GREEN + "MOTD set to: " + server);
 		return true;
 	}

@@ -1,5 +1,5 @@
 name: Justgamers
-version: 0.2 alpha
+version: 0.9.1 Beta
 main: nl.justspooky.justgamers.Startup
 author: justspooky
 description: The Servercore for the justgamers server.
