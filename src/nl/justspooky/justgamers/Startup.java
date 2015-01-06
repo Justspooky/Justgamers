@@ -1,6 +1,7 @@
 package nl.justspooky.justgamers;
 
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import nl.justspooky.justgamers.cmdoverride.OpCMD;
@@ -60,6 +61,8 @@ public class Startup extends JavaPlugin {
 		settings.setup(this);
 		settings.saveConfig();
 		
+		
+		
 		// Commands overides
 				manager.registerEvents(new PluginCMD(), this);
 				manager.registerEvents(new VersionCMD(), this);
@@ -80,7 +83,7 @@ public class Startup extends JavaPlugin {
 				manager.registerEvents(new QuitMSG(), this);
 				
 	} 
-	
+	ArrayList<Player> cooldown = new ArrayList<Player>();
 	// ** Fix the warning messages and create a join message
 
 	@Override
@@ -99,12 +102,16 @@ public class Startup extends JavaPlugin {
 
 @SuppressWarnings("deprecation")
 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-	if (cmd.getName().equalsIgnoreCase("staff")){
-		if (sender.hasPermission("justgamers.staff")){
-		Commandregister.Staffhelp(sender);
+	if (cmd.getName().equalsIgnoreCase("potion")){
+		//final Player player = (Player) sender;
+		if (args.length == 0){
+			sender.sendMessage("Please specify a potion effect !!");
+		return true;
 		}
-		Commandregister.noperm(sender);
-	}
+		if (args.length == 1 && args[0].equalsIgnoreCase("fire")){
+				Potions.fire(sender);
+		return true;
+		}
 	
 	if (!(sender instanceof Player)) {
 		sender.sendMessage("Only ingame players can set the shop location");
@@ -333,9 +340,9 @@ if (cmd.getName().equalsIgnoreCase("tag")){
 	
 
 
-	 
+	}	 
 return true;
 }
 
 
-} 
+}

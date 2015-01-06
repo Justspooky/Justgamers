@@ -1,7 +1,7 @@
 package nl.justspooky.justgamers.events;
 
-import nl.justspooky.justgamers.SettingsManager;
 
+import nl.justspooky.justgamers.SettingsManager;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -19,7 +19,8 @@ public class BanMSG implements Listener {
 	
 		Player player = e.getPlayer();
 		Object level = settings.getData().get(e.getPlayer().getName());
-		
+		if (!(e.getResult() == Result.KICK_WHITELIST)){
+		}else
 		if (settings.getData().get(e.getPlayer().getName()) == null){
 			
 			settings.getData().set(e.getPlayer().getName(), 0);

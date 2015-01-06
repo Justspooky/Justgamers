@@ -1,10 +1,12 @@
 name: Justgamers
 version: 0.9.1 Beta
 main: nl.justspooky.justgamers.Startup
-author: justspooky
+author: Justspooky
 description: The Servercore for the justgamers server.
 depend: [TagAPI]
 commands:
+  potion:
+    description: Donator potion effects
   regels:
     description: Read the rules in dutch
   twitter:
